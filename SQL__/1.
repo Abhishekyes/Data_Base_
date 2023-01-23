@@ -1,0 +1,72 @@
+--------------------------------------------------------------
+=> work
+1. Make connection
+2.Make cursor
+3.
+
+
+import mysql.connector
+# import mysql.connector
+#create user 'user'@'%' identified by 'password'
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="abc",
+  password="password"
+)
+print(mydb)
+mycursor = mydb.cursor()
+
+mycursor.execute("select * from ineuron.fsds")
+for i in mycursor:
+    print(i)
+
+mycursor.execute("select name from ineuron.fsds")
+for i in mycursor:
+    print(i)
+
+mycursor.execute("select * from  ineuron.fsds where roll > 50")
+
+for i in mycursor:
+    print(i)
+
+# channge name with condition
+
+mycursor.execute("update ineuron.fsds set name ='kabutar' where roll > 100")
+mydb.commit()
+
+mycursor.execute("update ineuron.fsds set email = 'raju'")
+mydb.commit()
+
+mycursor.execute("update ineuron.fsds set email = 'kaku'")
+mydb.commit()
+
+mycursor.execute("select max(roll) from ineuron.fsds")
+for i in mycursor:
+    print(i)
+
+for i in mycursor:
+    print(i)
+mycursor.execute("update ineuron.fsds set email = 'asas' where roll between 50 and 555555")
+mydb.commit()
+mycursor.execute("select count(*) from ineuron.fsds")
+for i in mycursor:
+    print(i)
+
+#drop table
+#mycursor.execute("drop table ineuron.fsds")
+
+#mydb.commit()
+# drop database
+mycursor.execute("drop database ineuron")
+mydb.commit()
+
+
+
+
+
+
+
+
+
+
+
