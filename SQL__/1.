@@ -1,4 +1,57 @@
+----------------------------------------------------
+# Making database
+
+import mysql.connector
+# import mysql.connector
+#create user 'user'@'%' identified by 'password'
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="abc",
+  password="password"
+)
+print(mydb)
+mycursor = mydb.cursor()
+mycursor.execute('create database ineuron')
 --------------------------------------------------------------
+## create cable 
+
+import mysql.connector
+# import mysql.connector
+#create user 'user'@'%' identified by 'password'
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="abc",
+  password="password"
+)
+print(mydb)
+mycursor = mydb.cursor()
+
+mycursor.execute('create table ineuron.fsds(name varchar(50),roll int,email varchar(50))')
+-----------------------------------------------------------------------------------------
+## insert Data 
+
+import mysql.connector
+# import mysql.connector
+#create user 'user'@'%' identified by 'password'
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="abc",
+  password="password"
+)
+print(mydb)
+mycursor = mydb.cursor()
+mycursor.execute("insert into ineuron.fsds values('sdfabhi',45965,'dsddsff'),('adbhi',4532,'dsff'),('abhi',455,'dsff'),('abhi',45,'dsfdvvf'),('abhis',454,'ddf')")
+mydb.commit()
+
+mycursor.execute('select * from ineuron.fsds')
+
+for i in mycursor:
+    print(i)
+
+
+
+--------------------------------------------------------------
+# Querries
 => work
 1. Make connection
 2.Make cursor
